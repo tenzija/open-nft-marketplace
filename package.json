@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "post-install": "rmdir /s /q .\\node_modules\\@traderxyz\\nft-swap-sdk && xcopy /e /i .\\forked-sdk\\@traderxyz\\nft-swap-sdk .\\node_modules\\@traderxyz\\nft-swap-sdk",
     "extract": "formatjs extract",
     "compile": "formatjs compile",
     "generate-lang-files": "yarn extract 'src/**/*.ts*' --ignore='**/*.d.ts' --out-file lang/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'"

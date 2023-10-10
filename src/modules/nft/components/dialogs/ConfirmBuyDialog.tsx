@@ -90,8 +90,8 @@ export function ConfirmBuyDialog({
     if (token && currency && order) {
       if (coinPricesQuery?.data) {
         const ratio =
-          coinPricesQuery.data[token.address.toLowerCase()][currency];
-
+          coinPricesQuery.data[token.address?.toLowerCase()][currency];
+          console.log('ratio', ratio)
         if (ratio) {
           return (
             ratio *

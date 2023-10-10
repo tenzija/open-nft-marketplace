@@ -66,7 +66,10 @@ export function isAddressEqual(address?: string, other?: string) {
     return false;
   }
 
-  return address.toLowerCase() === other.toLowerCase();
+  console.log('address', address)
+  console.log('other', other)
+
+  return address?.toLowerCase() === other?.toLowerCase();
 }
 
 export function getBlockExplorerUrl(chainId?: number) {

@@ -20,13 +20,16 @@ export async function getAssetData(
   contractAddress?: string,
   id?: string
 ): Promise<Asset | undefined> {
+
+  console.log('getAssetData: contractAddress / id ', contractAddress, id)
+
   if (!provider || !contractAddress || !id) {
     return;
   }
-  if (isENSContract(contractAddress)) {
-    const data = await getENSAssetData(provider, contractAddress, id);
-    return data;
-  }
+  // if (isENSContract(contractAddress)) {
+  //   const data = await getENSAssetData(provider, contractAddress, id);
+  //   return data;
+  // }
 
   const multicall = await getMulticallFromProvider(provider);
   const iface = new Interface(ERC721Abi);
@@ -67,6 +70,8 @@ export async function getAssetData(
     const symbol = results[3];
 
     const { chainId } = await provider.getNetwork();
+
+    console.log('getAssetData: owner / tokenURI / name / symbol / id / contractAddress / chainId ', owner, tokenURI, name, symbol, id, contractAddress, chainId)
 
     return {
       owner,
@@ -141,6 +146,8 @@ export async function getCollectionData(
     const symbol = results[1];
 
     const { chainId } = await provider.getNetwork();
+
+    console.log('getCollectionData: name / symbol / contractAddress / chainId ', name, symbol, contractAddress, chainId)
 
     return {
       collectionName: name,
@@ -236,6 +243,9 @@ export async function getAssetsData(
     }
     return assets;
   }
+
+  console.log('getAssetsData: assets ', assets)
+
   return assets;
 }
 

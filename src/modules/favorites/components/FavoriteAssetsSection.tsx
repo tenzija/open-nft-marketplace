@@ -60,13 +60,14 @@ function FavoriteAssetsSection({ onOpenFilters, filters, onImport }: Props) {
   }, [assets]);
 
   const renderAssets = () => {
+    console.log('assetList', assetList);
     const filteredAssetList = assetList
       .filter((asset) => {
         return (
-          asset.collectionName?.toLowerCase().search(search.toLowerCase()) >
+          asset.collectionName?.toLowerCase().search(search?.toLowerCase()) >
             -1 ||
           (asset.metadata !== undefined &&
-            asset.metadata.name.toLowerCase().search(search.toLowerCase()) > -1)
+            asset.metadata.name?.toLowerCase().search(search?.toLowerCase()) > -1)
         );
       })
       .filter((asset) => {

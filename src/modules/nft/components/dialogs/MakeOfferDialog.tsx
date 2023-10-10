@@ -187,9 +187,11 @@ export function MakeOfferDialog({ dialogProps, onConfirm, asset }: Props) {
       );
     } else {
       const imageUrl = TOKEN_ICON_URL(
-        token.address.toLowerCase(),
+        token.address?.toLowerCase(),
         token.chainId
       );
+
+      console.log('imageUrl', imageUrl);
 
       if (imageUrl) {
         return (

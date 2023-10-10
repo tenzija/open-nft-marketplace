@@ -80,6 +80,10 @@ export function useAsset(
         return;
       }
 
+      console.log('provider: ', provider);
+      console.log('contractAddress: ', contractAddress);
+      console.log('tokenId: ', tokenId);
+
       return await getAssetData(provider, contractAddress, tokenId);
     },
     {
@@ -545,7 +549,10 @@ export const useAssetMetadataFromList = (orderFilter: TraderOrderFilter) => {
 export function useFavoriteAssets() {
   const [assets, setAssets] = useAtom(assetsAtom);
 
+  
+
   const add = (asset: Asset) => {
+    console.log('add asset: ', asset);
     setAssets((value) => ({
       ...value,
       [`${asset.chainId}-${asset.contractAddress?.toLowerCase()}-${asset.id}`]:
@@ -557,6 +564,8 @@ export function useFavoriteAssets() {
     setAssets((value) => {
       let tempValue = { ...value };
 
+      console.log('remove asset: ', asset);
+
       delete tempValue[
         `${asset.chainId}-${asset.contractAddress?.toLowerCase()}-${asset.id}`
       ];
@@ -567,11 +576,12 @@ export function useFavoriteAssets() {
 
   const isFavorite = useCallback(
     (asset?: Asset) => {
+      console.log('isFavorite: ', asset);
       return (
         asset !== undefined &&
         assets !== undefined &&
         assets[
-        `${asset.chainId}-${asset.contractAddress.toLowerCase()}-${asset.id}`
+        `${asset.chainId}-${asset.contractAddress?.toLowerCase()}-${asset.id}`
         ] !== undefined
       );
     },
@@ -579,6 +589,7 @@ export function useFavoriteAssets() {
   );
 
   const toggleFavorite = (asset?: Asset) => {
+    console.log('toggleFavorite: ', asset)
     if (asset !== undefined) {
       if (isFavorite(asset)) {
         remove(asset);

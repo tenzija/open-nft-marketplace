@@ -90,9 +90,12 @@ export function useTokenList({
     const wrappedAddress = NETWORKS[chainId]?.wrappedAddress;
     const isNoWrappedTokenInList =
       tokenList &&
-      tokenList.findIndex((t) => t.address.toLowerCase() === wrappedAddress) ===
+      tokenList.findIndex((t) => t.address?.toLowerCase() === wrappedAddress) ===
       -1;
     // Wrapped Token is not on the list, we will add it here
+    console.log('wrappedAddress', wrappedAddress)
+    console.log('isNoWrappedTokenInList', isNoWrappedTokenInList)
+    console.log('tokenList', tokenList)
     if (wrappedAddress && isNoWrappedTokenInList) {
       tokenList = [
         {

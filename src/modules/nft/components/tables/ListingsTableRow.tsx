@@ -69,7 +69,9 @@ export function ListingsTableRow({
       if (coinPricesQuery?.data) {
         let ratio = 0;
 
-        const tokenData = coinPricesQuery.data[token.address.toLowerCase()];
+        const tokenData = coinPricesQuery.data[token.address?.toLowerCase()];
+
+        console.log('tokenData', tokenData)
 
         if (tokenData && currency in tokenData) {
           ratio = tokenData[currency];

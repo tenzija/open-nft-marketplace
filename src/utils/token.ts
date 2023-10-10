@@ -3,9 +3,11 @@ import defaultConfig from '../../config/default.tokenlist.json';
 import { ChainId } from '../constants/enum';
 
 export function GET_TOKEN(address: string, chainId: number) {
+  console.log('address', address);
   let index = defaultConfig.tokens.findIndex((t) => {
+    console.log('t', t)
     return (
-      t.address.toLowerCase() === address.toLowerCase() && t.chainId === chainId
+      t.address?.toLowerCase() === address?.toLowerCase() && t.chainId === chainId
     );
   });
   if (index === -1) {

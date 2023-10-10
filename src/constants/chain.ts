@@ -8,6 +8,7 @@ import fantomIcon from '../../public/assets/images/icons/fantom.svg';
 import ethIcon from '../../public/assets/images/icons/eth.png';
 import polygonIcon from '../../public/assets/images/icons/polygon.png';
 import arbitrumIcon from '../../public/assets/images/icons/arbitrum.png';
+import gilIcon from '../../public/assets/images/icons/gil.png';
 
 const infuraKey = process.env.INFURA_API_KEY;
 
@@ -134,4 +135,16 @@ export const NETWORKS: { [key: number]: Network } = {
       symbol: 'ETH',
     }
   },
+  [ChainId.GILTestnet]: {
+    chainId: ChainId.GILTestnet,
+    symbol: 'GANG',
+    explorerUrl: 'https://explorer.giltestnet.com',
+    name: 'GIL Testnet',
+    slug: 'gil-testnet',
+    coingeckoId: 'gang',
+    wrappedAddress: '0x624814Bca9A5d5620E350264f839b93f766B60a2',
+    nativeCurrencyUrl: gilIcon.src,
+    imageUrl: gilIcon.src,
+    providerRpcUrl: 'https://rpc.giltestnet.com',
+  }
 };

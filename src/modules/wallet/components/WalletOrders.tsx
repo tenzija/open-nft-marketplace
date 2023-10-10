@@ -45,16 +45,19 @@ export function WalletOrders({ filter }: Props) {
 
   const ordersWithMetadata = useMemo(() => {
     if (orders?.orders && assets && tokens) {
+      console.log('orders', orders?.orders)
+      console.log('assets', assets)
+      console.log('tokens', tokens)
       return orders?.orders.map((or) => {
         return {
           ...or,
           token: tokens.find(
-            (t) => or.erc20Token.toLowerCase() === t.address.toLowerCase()
+            (t) => or.erc20Token?.toLowerCase() === t.address?.toLowerCase()
           ),
           asset: assets.find(
             (a) =>
               a.id === or.nftTokenId &&
-              a.contractAddress.toLowerCase() === or.nftToken.toLowerCase()
+              a.contractAddress?.toLowerCase() === or.nftToken?.toLowerCase()
           ),
         };
       });

@@ -36,8 +36,8 @@ export function truncateErc1155TokenId(id?: string) {
 }
 
 export function getNFTMediaSrcAndType(address: string, chainId: ChainId, tokenId: string): { type: 'iframe' | 'image', src?: string } {
-
-  if (address.toLowerCase() === '0x5428dff180837ce215c8abe2054e048da311b751' && chainId === ChainId.Polygon) {
+  console.log('address', address)
+  if (address?.toLowerCase() === '0x5428dff180837ce215c8abe2054e048da311b751' && chainId === ChainId.Polygon) {
     return { type: 'iframe', src: `https://arpeggi.io/player?type=song&token=${tokenId}` }
   }
 
@@ -46,7 +46,8 @@ export function getNFTMediaSrcAndType(address: string, chainId: ChainId, tokenId
 
 
 export function isENSContract(address: string) {
-  if (address.toLowerCase() === '0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85'.toLowerCase()) {
+  console.log('address', address)
+  if (address?.toLowerCase() === '0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85'.toLowerCase()) {
     return true;
   } else {
     false;

@@ -94,9 +94,11 @@ export const getERC20Balances = async (
   const tokenAddressesWithNative = [
     MULTICALL_NATIVE_TOKEN_ADDRESS,
     ...tokensByChainId
-      .filter((t) => t.address.toLowerCase() !== ZEROEX_NATIVE_TOKEN_ADDRESS)
-      .map((t) => t.address.toLowerCase()),
+      .filter((t) => t.address?.toLowerCase() !== ZEROEX_NATIVE_TOKEN_ADDRESS)
+      .map((t) => t.address?.toLowerCase()),
   ];
+
+  console.log('tokenAddressesWithNative', tokenAddressesWithNative)
 
   const multicallBalanceResult = await getMulticallTokenBalances(
     tokenAddressesWithNative,
@@ -108,7 +110,9 @@ export const getERC20Balances = async (
     const [, tokenBalances] = multicallBalanceResult;
 
     return tokensByChainId.map((t) => {
-      let addr = t.address.toLowerCase();
+      let addr = t.address?.toLowerCase();
+
+      console.log('addr', addr)
 
       if (addr === ZEROEX_NATIVE_TOKEN_ADDRESS) {
         addr = MULTICALL_NATIVE_TOKEN_ADDRESS;
@@ -140,9 +144,11 @@ export const getERC20WithProxyUnlockedBalances = async (
   const tokenAddressesWithNative = [
     MULTICALL_NATIVE_TOKEN_ADDRESS,
     ...tokensByChainId
-      .filter((t) => t.address.toLowerCase() !== ZEROEX_NATIVE_TOKEN_ADDRESS)
-      .map((t) => t.address.toLowerCase()),
+      .filter((t) => t.address?.toLowerCase() !== ZEROEX_NATIVE_TOKEN_ADDRESS)
+      .map((t) => t.address?.toLowerCase()),
   ];
+
+  console.log('tokenAddressesWithNative', tokenAddressesWithNative)
 
   const multicallBalanceResult = await getMulticallTokenBalancesAndAllowances(
     tokenAddressesWithNative,
@@ -157,7 +163,9 @@ export const getERC20WithProxyUnlockedBalances = async (
     const [, tokenBalances] = multicallBalanceResult;
 
     const balances = tokensByChainId.map((t) => {
-      let addr = t.address.toLowerCase();
+      let addr = t.address?.toLowerCase();
+
+      console.log('addr', addr)
 
       if (addr === ZEROEX_NATIVE_TOKEN_ADDRESS) {
         addr = MULTICALL_NATIVE_TOKEN_ADDRESS;

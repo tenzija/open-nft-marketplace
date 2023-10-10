@@ -20,7 +20,7 @@
   "fees": [
     {
       "amount_percentage": 1,
-      "recipient": "0x5bD68B4d6f90Bcc9F3a9456791c0Db5A43df676d"
+      "recipient": "0x15C8F93c4C0e93972c819bAea9397A77a2F3D8E1"
     }
   ],
   "format": {
@@ -29,31 +29,40 @@
   },
   "collections": [
     {
-      "image": "/assets/kittygotchi/banner_eth.svg",
-      "name": "Kittygotchi",
-      "backgroundImage": "/assets/kittygotchi/banner_eth.svg",
-      "chainId": 1,
-      "contractAddress": "0xe76591AD590765e9Ab9EdE82BEa274aFcF5Ce703",
-      "description": "",
-      "uri": "kittygotchieth"
-    },
-    {
-      "image": "/assets/kittygotchi/banner_bsc.svg",
-      "name": "Kittygotchi",
-      "backgroundImage": "/assets/kittygotchi/banner_bsc.svg",
-      "chainId": 56,
-      "contractAddress": "0xf44112926506318e3Aace4381B2D76791D980Ac3",
-      "description": "",
-      "uri": "kittygotchibsc"
-    },
-    {
       "image": "/assets/kittygotchi/banner_polygon.svg",
-      "name": "Kittygotchi",
+      "name": "KittygotchiGIL",
       "backgroundImage": "/assets/kittygotchi/banner_polygon.svg",
-      "chainId": 137,
-      "contractAddress": "0xEA88540adb1664999524d1a698cb84F6C922D2A1",
-      "description": "",
+      "chainId": 1452,
+      "contractAddress": "0xB565717f27aD8bC4ec5FE9D1A79CB637A3561049",
+      "description": "Test collection for testing purposes",
       "uri": "kittygotchi"
+    },
+    {
+      "image": "/assets/images/icons/gil.png",
+      "name": "Space Gum",
+      "backgroundImage": "/assets/images/icons/gil.png",
+      "chainId": 1452,
+      "contractAddress": "0x3974a70DB923C995c1F4E0841604856F28B1BeA7",
+      "description": "Test collection for testing purposes",
+      "uri": "gum"
+    },
+    {
+      "image": "/assets/images/icons/gil.png",
+      "name": "Bear Collection",
+      "backgroundImage": "/assets/images/icons/gil.png",
+      "chainId": 1452,
+      "contractAddress": "0x2903CE865AF3E78925D2d4898552B6280361152C",
+      "description": "Test collection for testing purposes",
+      "uri": "bear"
+    },
+    {
+      "image": "/assets/images/icons/gil.png",
+      "name": "Platypus Collection",
+      "backgroundImage": "/assets/images/icons/gil.png",
+      "chainId": 1452,
+      "contractAddress": "0x5323E6bF27Bb27c3e0AC5DD482D6B01a0B62E51D",
+      "description": "Test collection for testing purposes",
+      "uri": "platypus"
     }
   ],
   "tokens": [
@@ -149,15 +158,15 @@
           "items": [
             {
               "type": "asset",
-              "chainId": 137,
-              "contractAddress": "0xEA88540adb1664999524d1a698cb84F6C922D2A1",
-              "tokenId": "42"
+              "chainId": 1452,
+              "contractAddress": "0x2903CE865AF3E78925D2d4898552B6280361152C",
+              "tokenId": "2"
             },
             {
               "type": "asset",
-              "chainId": 137,
-              "contractAddress": "0xEA88540adb1664999524d1a698cb84F6C922D2A1",
-              "tokenId": "50"
+              "chainId": 1452,
+              "contractAddress": "0x5323E6bF27Bb27c3e0AC5DD482D6B01a0B62E51D",
+              "tokenId": "3"
             },
             {
               "type": "collection",
@@ -175,6 +184,14 @@
             {
               "featured": true,
               "type": "collection",
+              "title": "Bear Collection",
+              "chainId": 1452,
+              "contractAddress": "0x2903CE865AF3E78925D2d4898552B6280361152C",
+              "backgroundImageUrl": "/assets/images/icons/gil.png"
+            },
+            {
+              "featured": true,
+              "type": "collection",
               "title": "Kittygotchi",
               "chainId": 137,
               "contractAddress": "0xEA88540adb1664999524d1a698cb84F6C922D2A1",
@@ -182,10 +199,10 @@
             },
             {
               "type": "collection",
-              "title": "Kittygotchi",
-              "chainId": 56,
-              "contractAddress": "0xf44112926506318e3Aace4381B2D76791D980Ac3",
-              "backgroundImageUrl": "/assets/kittygotchi/banner_bsc.svg"
+              "title": "Platypus Collection",
+              "chainId": 1452,
+              "contractAddress": "0x5323E6bF27Bb27c3e0AC5DD482D6B01a0B62E51D",
+              "backgroundImageUrl": "/assets/images/icons/gil.png"
             },
             {
               "type": "collection",
@@ -198,15 +215,15 @@
         },
         {
           "type": "video",
-          "title": "Marketplace Features",
-          "videoUrl": "https://www.youtube.com/embed/9UxtgAkNG1k",
+          "title": "Gauss Explained",
+          "videoUrl": "https://www.youtube.com/embed/hofkkXSwk6I?si=g95UrpI6W8RPJQcx",
           "embedType": "youtube"
         },
         {
           "variant": "dark",
           "type": "call-to-action",
-          "title": "Kittygotchi",
-          "subtitle": "See your kitties on ETH, BSC and Polygon networks",
+          "title": "Bear Collection",
+          "subtitle": "See your bears on GIL Testnet",
           "button": {
             "title": "See all",
             "url": "/collections"
@@ -214,15 +231,15 @@
           "items": [
             {
               "type": "asset",
-              "chainId": 137,
-              "contractAddress": "0xEA88540adb1664999524d1a698cb84F6C922D2A1",
-              "tokenId": "42"
+              "chainId": 1452,
+              "contractAddress": "0x2903CE865AF3E78925D2d4898552B6280361152C",
+              "tokenId": "1"
             },
             {
               "type": "asset",
-              "chainId": 137,
-              "contractAddress": "0xEA88540adb1664999524d1a698cb84F6C922D2A1",
-              "tokenId": "50"
+              "chainId": 1452,
+              "contractAddress": "0x2903CE865AF3E78925D2d4898552B6280361152C",
+              "tokenId": "4"
             }
           ]
         }

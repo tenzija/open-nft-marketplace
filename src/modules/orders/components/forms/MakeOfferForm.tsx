@@ -165,9 +165,11 @@ export default function MakeOfferForm({ onConfirm, asset, disabled }: Props) {
       );
     } else {
       const imageUrl = TOKEN_ICON_URL(
-        token.address.toLowerCase(),
+        token.address?.toLowerCase(),
         token.chainId
       );
+
+      console.log('imageUrl', imageUrl);
 
       if (imageUrl) {
         return (

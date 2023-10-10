@@ -109,6 +109,7 @@ export function ImportAssetDialog({ dialogProps }: Props) {
       );
 
       if (!assetData?.tokenURI) {
+        console.log(assetData);
         throw new Error(
           formatMessage({
             id: 'the.nft.has.no.metadata',
@@ -120,6 +121,8 @@ export function ImportAssetDialog({ dialogProps }: Props) {
       const metadata = await getAssetMetadata(assetData?.tokenURI);
 
       const newObject = { ...asset, metadata } as Asset;
+
+      console.log('newObject: ', newObject);
 
       if (favorites.isFavorite(newObject)) {
         enqueueSnackbar(

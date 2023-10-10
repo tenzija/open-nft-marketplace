@@ -17,9 +17,10 @@ export function WalletTotalBalance() {
       const prices = coinPricesQuery.data;
 
       const tokenBalances = tokenBalancesQuery.data.map((tb) => {
+        console.log('tb', tb)
         return {
           balanceUnits: ethers.utils.formatUnits(tb.balance, tb.token.decimals),
-          address: tb.token.address.toLowerCase(),
+          address: tb.token.address?.toLowerCase(),
         };
       });
 

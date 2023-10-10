@@ -32,11 +32,12 @@ function WalletBalancesTable({ isBalancesVisible }: Props) {
 
   const tokenBalancesWithPrices = useMemo(() => {
     return tokenBalancesQuery?.data?.map((tb) => {
+      console.log('tb', tb);
       return {
         ...tb,
         price:
-          prices && prices[tb.token.address.toLowerCase()]
-            ? prices[tb.token.address.toLowerCase()][currency]
+          prices && prices[tb.token.address?.toLowerCase()]
+            ? prices[tb.token.address?.toLowerCase()][currency]
             : undefined,
       };
     });
